@@ -29,17 +29,19 @@ public class CustomListTest {
     @Test
     public void hasCityTest() {
         list = MockCityList();
-        list.addCity(new City("Edmonton", "Alberta"));
-        assertEquals(true, list.hasCity("Edmonton"));
+        City city = new City("Edmonton", "Alberta");
+        list.addCity(city);
+        assertEquals(true, list.hasCity(city));
     }
 
     @Test
     public void deleteCityTest() {
         list = MockCityList();
-        list.addCity(new City("Edmonton", "Alberta"));
-        assertEquals(true, list.hasCity("Edmonton"));
-        list.deleteCity("Edmonton");
-        assertEquals(false, list.hasCity("Edmonton"));
+        City city = new City("Edmonton", "Alberta");
+        list.addCity(city);
+        assertEquals(true, list.hasCity(city));
+        list.deleteCity(city);
+        assertEquals(false, list.hasCity(city));
     }
 
     @Test
